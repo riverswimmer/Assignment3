@@ -10,10 +10,10 @@ best <- function (state, outcome) {
 	
 	##check validity of arguments
 	if (state %in% unique(ao[,7]) == FALSE) {
-                stop(print("invalid state"))
+                stop("invalid state")
 	}
 	if (outcome %in% c("heart attack", "heart failure", "pneumonia") == FALSE) {
-                stop(print("invalid outcome"))
+                stop("invalid outcome")
 	}
 	
 	## subset table based on state and outcome, order by outcome ranking
