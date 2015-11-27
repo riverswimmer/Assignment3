@@ -3,7 +3,7 @@
 ## measure
 
 best <- function (state, outcome) {
-	##import and order outcome measures allphabetically by 
+	##import and order outcome measures alphabetically by 
 	ao <- read.csv("outcome-of-care-measures.csv", colClasses = "character",
 				na.strings="Not Available", stringsAsFactors=FALSE)
 	
@@ -22,7 +22,7 @@ best <- function (state, outcome) {
 	else if(outcome == "heart failure") {scol <- 17}
 	else {scol <- 23}
 	so <- ao[ao[,7] == state, c(2,7,scol)]
-	soo <- so[order(as.numeric(so[,3]),so[,2]),]
+	soo <- so[order(as.numeric(so[,3]),so[,1]),]
 
 	##return 1st ranked in subset data
 	print(soo[1,1])
